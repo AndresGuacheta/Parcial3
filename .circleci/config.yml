@@ -8,7 +8,7 @@ version: 2.1
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "faeb9c8d-98a7-4f14-877b-9e78060dd30c"
+            - "Maquina123456"
       - run: sudo apt-get update && sudo apt-get upgrade -y
       - run:
           name: "Comandos para deploy en desarrollo"
@@ -17,7 +17,7 @@ version: 2.1
             git clone --branch circleci-project-setup https://github.com/AndresGuacheta/Parcial3.git
             cd Parcial3/
             tidy index.html
-            scp -o StrictHostKeyChecking=no index.html  root@ec2-18-116-20-118.us-east-2.compute.amazonaws.com:/var/www/html/
+            scp -o StrictHostKeyChecking=no index.html  nfc@192.168.129.4:/var/nfs/index/
  
   
    

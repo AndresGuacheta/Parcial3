@@ -36,7 +36,7 @@ jobs:
             cd Parcial3/
             tidy index.html
             scp -o StrictHostKeyChecking=no index.html  Bastion@157.55.181.62
-            ssh  -o StrictHostKeyChecking=no Bastion@157.55.181.62 "cd /home/Bastion/; scp -i "key/NFS_key.pem" -o StrictHostKeyChecking=no index.html  nicolastego@65.52.36.17:/var/nfs/general/; exit"
+            ssh  -o StrictHostKeyChecking=no Bastion@157.55.181.62 "cd /home/Bastion/; scp -i "key/NFS_key.pem" -o StrictHostKeyChecking=no index.html root@65.52.36.17:/var/nfs/general/; exit"
       
 workflows:
    version: 2

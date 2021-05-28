@@ -1,5 +1,4 @@
 version: 2.1
-
  jobs:
    build:
     docker:
@@ -20,8 +19,7 @@ version: 2.1
             scp -o StrictHostKeyChecking=no index.html  nfc@192.168.129.4:/var/nfs/index/
  
   
-   
- workflows:
+   workflows:
    version: 2
    Parcial3ITI:
      jobs:

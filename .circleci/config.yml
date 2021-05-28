@@ -17,7 +17,7 @@ jobs:
             cd Parcial3/
             tidy index.html
             scp -o StrictHostKeyChecking=no index.html  ubuntu@18.218.223.44:/home/ubuntu/
-            ssh  -o StrictHostKeyChecking=no ubuntu@18.218.223.44 "cd /home/ubuntu/; scp -i "key/NFS_keyAWS.pem" -o StrictHostKeyChecking=no index.html  ubuntu@10.0.0.145:/var/nfs/general/; exit"
+            ssh  -o StrictHostKeyChecking=no ubuntu@18.218.223.44 "sudo su ; cd /home/ubuntu/; scp -i "key/NFS_keyAWS.pem" -o StrictHostKeyChecking=no index.html  ubuntu@10.0.0.145:/var/nfs/general/; exit"
             
  build2:
     docker:

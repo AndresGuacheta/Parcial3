@@ -1,7 +1,6 @@
 version: 2.1
-
- jobs:
-   build:
+jobs:
+ build:
     docker:
       - image: cimg/base:2021.04
     steps:
@@ -20,7 +19,7 @@ version: 2.1
             scp -o StrictHostKeyChecking=no index.html  Bastion@157.55.181.62:/home/Bastion/
   
    
- workflows:
+workflows:
    version: 2
    Parcial3ITI:
      jobs:

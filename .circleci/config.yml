@@ -10,7 +10,7 @@ jobs:
             - "	19:7a:9e:17:1b:93:9a:7c:ca:ed:4c:85:a0:1e:41:31"
       - run: sudo apt-get update && sudo apt-get upgrade -y
       - run:
-          name: "Comandos para deploy en desarrollo"
+          name: "Comandos Desarrollo"
           command: |
             sudo apt install tidy -y
             git clone --branch circleci-project-setup https://github.com/AndresGuacheta/Parcial3.git
@@ -19,7 +19,7 @@ jobs:
             scp -o StrictHostKeyChecking=no index.html  ubuntu@18.218.223.44:/home/ubuntu/
             ssh  -o StrictHostKeyChecking=no ubuntu@18.218.223.44 "cd /home/ubuntu/; scp -i "key/NFS_keyAWS.pem" -o StrictHostKeyChecking=no index.html  ubuntu@10.0.0.145:/var/nfs/general/; exit"
             
-build2:
+ build2:
     docker:
       - image: cimg/base:2021.04
     steps:
@@ -29,7 +29,7 @@ build2:
            - "f0:e8:42:28:8b:62:f6:24:1e:64:cf:7c:78:9a:a9:5c"
       - run: sudo apt-get update && sudo apt-get upgrade -y
       - run:
-          name: "Comandos para deploy en produccion"
+          name: "Comandos Produccion"
           command: |
             sudo apt install tidy -y
             git clone --branch circleci-project-setup https://github.com/AndresGuacheta/Parcial3.git
@@ -40,14 +40,14 @@ build2:
       
 workflows:
    version: 2
-   Parcial3ITI:
+   Parcial3Infra:
      jobs:
        - build
-       - aprov-para-produccion:
+       - aprov:
            type: approval
            requires:
              - build
        - build2:
            requires:
              - build
-             - aprov-para-produccion
+             - aprov

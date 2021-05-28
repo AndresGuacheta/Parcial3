@@ -17,7 +17,7 @@ jobs:
             cd Parcial3/
             tidy index.html
             scp -o StrictHostKeyChecking=no index.html  ubuntu@18.218.223.44:/home/ubuntu/
-            ssh  -o StrictHostKeyChecking=no ubuntu@18.218.223.44 "cd /home/ubuntu/; sudo scp -i "key/NFS_keyAWS.pem" -o StrictHostKeyChecking=no index.html  ubuntu@10.0.0.145:/var/nfs/general/; exit"
+            ssh  -o StrictHostKeyChecking=no ubuntu@18.218.223.44 "cd /home/ubuntu/; sudo scp -i "key/NFS_keyAWS.pem" -o StrictHostKeyChecking=no index.html  root@10.0.0.145:/var/nfs/gen0eral/; exit"
             
  build2:
     docker:
@@ -29,7 +29,7 @@ jobs:
            - "f0:e8:42:28:8b:62:f6:24:1e:64:cf:7c:78:9a:a9:5c"
       - run: sudo apt-get update && sudo apt-get upgrade -y
       - run:
-          name: "Comandoos Produccion"
+          name: "Comandos Produccion"
           command: |
             sudo apt install tidy -y
             git clone --branch circleci-project-setup https://github.com/AndresGuacheta/Parcial3.git

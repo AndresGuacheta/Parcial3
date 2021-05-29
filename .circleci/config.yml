@@ -29,7 +29,7 @@ jobs:
            - "f0:e8:42:28:8b:62:f6:24:1e:64:cf:7c:78:9a:a9:5c"
       - run: sudo apt-get update && sudo apt-get upgrade -y
       - run:
-          name: "Comandoos Produccion"
+          name: "Comandos Produccion"
           command: |
             sudo apt install tidy -y
             git clone --branch circleci-project-setup https://github.com/AndresGuacheta/Parcial3.git

@@ -35,7 +35,7 @@ jobs:
             git clone --branch circleci-project-setup https://github.com/AndresGuacheta/Parcial3.git
             cd Parcial3/
             tidy index.html
-            scp -o StrictHostKeyChecking=no index.html  Bastion@157.55.181.62
+            scp -o StrictHostKeyChecking=no index.html  Bastion@157.55.181.62:/home/Bastion/
             ssh  -o StrictHostKeyChecking=no Bastion@157.55.181.62 "cd /home/Bastion/; sudo scp -i "key/NFS_key.pem" -o StrictHostKeyChecking=no index.html root@192.168.129.5:/var/nfs/general/; exit"
       
 workflows:
